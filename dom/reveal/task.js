@@ -1,4 +1,6 @@
-const reveal = document.querySelector(".reveal");
+const reveal = document.querySelectorAll(".reveal");
+
+console.log(reveal);
 
 function visible(el) {
   const { top, bottom } = el.getBoundingClientRect();
@@ -11,7 +13,7 @@ function visible(el) {
 }
 
 setInterval(() => {
-  console.log(visible(reveal));
-}, 500);
+  console.log(visible(reveal[0])) || console.log(visible(reveal[1]));
+}, 1000);
 
 window.addEventListener("scroll", visible);
